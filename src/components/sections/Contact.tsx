@@ -95,9 +95,19 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="bg-muted rounded-2xl h-48 flex items-center justify-center">
-              <p className="text-muted-foreground text-sm">Map Integration</p>
+            {/* Google Maps Embed */}
+            <div className="rounded-2xl overflow-hidden shadow-card h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5959!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzE3LjgiTiA3N8KwMzUnNDAuNiJF!5e0!3m2!1sen!2sin!4v1699900000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ishakulam Campus Location"
+                className="w-full h-full"
+              />
             </div>
           </div>
 
