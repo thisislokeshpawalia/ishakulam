@@ -38,19 +38,38 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+911234567890" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a
+              href="tel:+919760990064"
+              className="flex items-center gap-2 hover:text-accent transition-colors"
+            >
               <Phone className="w-4 h-4" />
-              +91 12345 67890
+              +91 9760990064
             </a>
-            <a href="mailto:info@ishakulam.edu" className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a
+              href="mailto:ishakulamschool@gmail.com"
+              className="flex items-center gap-2 hover:text-accent transition-colors"
+            >
               <Mail className="w-4 h-4" />
-              info@ishakulam.edu
+              ishakulamschool@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Facebook</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Twitter</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">YouTube</a>
+            <a
+              href="https://www.facebook.com/share/14QvXs8gypR/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/ishakulamschool?utm_source=qr&igsh=eGZ1azdtc3ZmajIx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -60,12 +79,20 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-16 h-16 flex items-center justify-center text-primary-foreground font-heading font-bold text-xl">
-               <img src={ishakulamLogo} alt="Logo" className="w-full h-full object-cover" />
+              <img
+                src={ishakulamLogo}
+                alt="Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
-            
+
             <div>
-              <h1 className="font-heading text-xl font-bold text-foreground">Ishakulam</h1>
-              <p className="text-xs text-muted-foreground">Gurukul of Excellence</p>
+              <h1 className="font-heading text-xl font-bold text-foreground">
+                Ishakulam
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                Gurukul of Excellence
+              </p>
             </div>
           </Link>
 
@@ -74,7 +101,9 @@ const Header = () => {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => link.path.includes("#") ? scrollToSection(link.path) : null}
+                onClick={() =>
+                  link.path.includes("#") ? scrollToSection(link.path) : null
+                }
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 {link.path.includes("#") ? (
@@ -106,7 +135,11 @@ const Header = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => link.path.includes("#") ? scrollToSection(link.path) : setIsOpen(false)}
+                  onClick={() =>
+                    link.path.includes("#")
+                      ? scrollToSection(link.path)
+                      : setIsOpen(false)
+                  }
                   className="text-left text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
                   {link.path.includes("#") ? (

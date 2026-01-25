@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Youtube, Instagram, MapPin, Phone, Mail, Clock } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Youtube,
+  Instagram,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+} from "lucide-react";
 import ishakulamLogo from "@/assets/ishakulamlogo.png";
 
 const quickLinks = [
@@ -20,28 +29,39 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-16 h-16 flex items-center justify-center text-primary-foreground font-heading font-bold text-xl">
-               <img src={ishakulamLogo} alt="Logo" className="w-full h-full object-cover" />
-            </div>
+                <img
+                  src={ishakulamLogo}
+                  alt="Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
                 <h3 className="font-heading text-xl font-bold">Ishakulam</h3>
-                <p className="text-xs text-primary-foreground/70">Gurukul of Excellence</p>
+                <p className="text-xs text-primary-foreground/70">
+                  Gurukul of Excellence
+                </p>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Where ancient wisdom meets modern education. We nurture minds, build character, 
-              and shape future leaders through holistic learning.
+              Where ancient wisdom meets modern education. We nurture minds,
+              build character, and shape future leaders through holistic
+              learning.
             </p>
             <div className="flex items-center gap-4 mt-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors">
+              <a
+                href="https://www.facebook.com/share/14QvXs8gypR/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors">
+              <a
+                href="https://www.instagram.com/ishakulamschool?utm_source=qr&igsh=eGZ1azdtc3ZmajIx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -53,8 +73,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    to={link.path} 
+                  <Link
+                    to={link.path}
                     className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
                   >
                     {link.name}
@@ -71,20 +91,29 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-primary-foreground/80">
-                  Ishakulam Campus, Village Road,<br />
-                  District, State - 123456
+                  Vill Jiwana Guliyan,
+                  <br />
+                  Baraut-Meerut Road,
+                  <br />
+                  Tehsil:Baraut, Distt.Bagpat U.P
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+911234567890" className="text-sm text-primary-foreground/80 hover:text-accent">
-                  +91 12345 67890
+                <a
+                  href="tel:+919760990064"
+                  className="text-sm text-primary-foreground/80 hover:text-accent"
+                >
+                  +91 9760990064
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@ishakulam.edu" className="text-sm text-primary-foreground/80 hover:text-accent">
-                  info@ishakulam.edu
+                <a
+                  href="mailto:ishakulamschool@gmail.com"
+                  className="text-sm text-primary-foreground/80 hover:text-accent"
+                >
+                  ishakulamschool@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -98,7 +127,9 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6">Stay Updated</h4>
+            <h4 className="font-heading text-lg font-bold mb-6">
+              Stay Updated
+            </h4>
             <p className="text-sm text-primary-foreground/80 mb-4">
               Subscribe to our newsletter for latest updates and announcements.
             </p>
@@ -125,8 +156,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
             <p>© 2026 Ishakulam. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <Link to="/privacy" className="hover:text-accent">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-accent">Terms of Service</Link>
+              <Link to="/privacy" className="hover:text-accent">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-accent">
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>
