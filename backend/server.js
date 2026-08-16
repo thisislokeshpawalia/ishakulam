@@ -28,6 +28,11 @@ app.post('/api/contact', async (req, res) => {
       return res.status(400).json({ error: 'Name, email, and message are required' });
     }
 
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error("Email credentials are not configured in environment variables.");
+      return res.status(500).json({ error: 'Server email configuration is missing. Please set EMAIL_USER and EMAIL_PASS.' });
+    }
+
     // Configure nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
