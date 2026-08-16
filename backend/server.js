@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -27,17 +28,26 @@ app.post('/api/contact', async (req, res) => {
       return res.status(400).json({ error: 'Name, email, and message are required' });
     }
 
-    // TODO: Send email or store in database
-    // For now, just log to console
-    console.log('Received contact submission:');
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Phone: ${phone}`);
-    console.log(`Subject: ${subject}`);
-    console.log(`Message: ${message}`);
+    // Configure nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-    // Simulate delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'this.is.lokesh.pawalia@gmail.com', // Where you want to receive the emails
+      replyTo: email, // So you can reply directly to the person who filled out the form
+      subject: `New Contact Form Submission: ${subject}`,
+      text: `You have received a new message from the Ishakulam website contact form.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully to this.is.lokesh.pawalia@gmail.com');
 
     res.status(200).json({ success: true, message: 'Message sent successfully' });
   } catch (error) {
